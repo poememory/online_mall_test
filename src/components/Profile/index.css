@@ -1,0 +1,44 @@
+.back_waterMark{
+    width: 100vw;
+    height: 100vh;
+}
+.profilebox{
+    width: 70vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding-left: 5vw;
+    background-color: aliceblue;
+    border-radius: 3vw;
+    box-shadow: 0 0 10px 10px grey;
+    position: absolute;
+    top: 12vh;
+    right: 10vw;
+
+}
+.profile_item{
+    display: flex;
+    div{
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+    }
+    Input{
+        width: 300px;
+    }
+
+}
+.profile_avatar{
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    right: 3vw;
+    top: 3vh;
+    border-radius: 100%;
+    background-image: url("/public/user-default-avatar.jpg");
+    background-size: contain;
+
+}

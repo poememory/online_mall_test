@@ -1,0 +1,15 @@
+.footer{
+    box-shadow: 0 0 10px 10px black;
+    position: relative;
+}
+.avatarGroup{
+    position: absolute;
+    bottom: 2vh;
+    right: 3vw;
+    span{
+        padding-top: 5px;
+        margin-right: 10px;
+        color:white;
+        font-size: 20px;
+    }
+}

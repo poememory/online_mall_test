@@ -1,0 +1,104 @@
+.LoginPage{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom right,#5cdbd3, #002c8c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    bottom: 0;
+}
+.contentbox{
+    width: 600px;
+    height: 400px;
+    background-color: transparent;
+    border-radius: 55px;
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+}
+.title{
+    display: flex;
+    width: 600px;
+    height: 60px;
+    position: relative;
+    display: flex;
+    .titlecontent{
+        width: 600px;
+        height: 60px;
+    }
+    .backtap{
+        position: absolute;
+        width: 300px;height: 60px;
+        left: 0;top: 0;
+        background-color: aliceblue;
+        border-radius:50px 50px 0 0;
+        z-index: 2;
+    }
+    .titlecontent{
+        z-index: 200;
+        text-align: center;
+        font-size: 20px;
+        padding-top: 13px;
+        color: black;
+        box-sizing: content-box;
+    }
+}
+.inner_content,.login-form{
+    width: 600px;
+    height: 340px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.login-form Input{
+    width: 300px;
+}
+.verify_code_input{
+    width: 150px;
+}
+.unselect{
+    opacity: 0.5; 
+}
+.goleft{
+    transform: translateX(300px);
+    transition: transform 0.3s ease-out; 
+}
+.goright{
+    transform: translateX(0);
+    transition: transform 0.3s ease-out; 
+}
+.login-form-button{
+    margin-right: 160px;
+}
+.register-form{
+    align-items: end;
+}
+.breathIcon{
+    width: 700px;
+    height: 500px;
+    background-image: url('/icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-30deg);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: breath 2s infinite;
+}
+@keyframes breath {
+    0%{
+        opacity: 0.7;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    75%{
+        transform: translateX(-20px);
+    }
+    100%{
+        opacity: 0.7;
+    }
+}

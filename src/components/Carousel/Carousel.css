@@ -1,0 +1,24 @@
+.carousel {
+    margin-top: 1vw;
+    position: relative;
+    width: 75vw;
+    height: 42vw;
+    border-radius: 2vw;
+    box-shadow: 0 0 10px 5px black;
+    overflow: hidden;
+  }
+.inner{
+    height: 42vw;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+  .carousel-item {
+    width: 75vw;
+    height: 42vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  

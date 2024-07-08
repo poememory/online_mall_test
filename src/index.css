@@ -1,0 +1,21 @@
+/* 隐藏滚动条，但允许滚动 */
+html, body {
+  overflow: -moz-scrollbars-none; /* 仅适用于旧版 Firefox */
+  -ms-overflow-style: none; /* 适用于 Internet Explorer 和 Edge */
+  scrollbar-width: none; /* 适用于 Firefox */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* 适用于 Webkit 浏览器 */
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.page{
+  padding-top: 6vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

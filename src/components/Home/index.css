@@ -1,0 +1,48 @@
+.Homepage{
+    padding-top: 2vh;
+    padding-bottom: 10vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20vh;
+    background: linear-gradient(to bottom right, aliceblue,#2f54eb);
+}
+.Carousel_box{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.Carousel_info{
+    margin-right: 3vw;
+    margin-top: 10vh;
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 120px;
+    animation: color-change 5s infinite;
+}
+.cards_Home{
+    width: 90vw;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4vw ;
+}
+@keyframes color-change {
+    0% {
+        color: #030852;
+      }
+      25% {
+        color: #006d75;
+      }
+      50% {
+        color: #0958d9;
+      }
+      75% {
+        color: #ffff;
+      }
+      100% {
+        color: #030852;
+      }
+
+}
