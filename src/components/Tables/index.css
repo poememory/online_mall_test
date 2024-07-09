@@ -1,21 +1,21 @@
-.Tables_page {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.onshow{
+  animation:come 0.7s  forwards;
+}
   
-  .fade-in-section {
-    opacity: 0;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 1); /* 模糊的阴影效果 */
-    transform: translateY(100px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    border-bottom: black 5px solid;
+@keyframes come {
+  0%{
+    opacity: 0.5;
+    margin-right: -300px;
   }
-  
-  .fade-in-section.is-visible {
+  0%{
     opacity: 1;
-    transform: translateY(0);
+    margin-right: 0;
   }
-  
-  
+}
+.displayer_titile{
+  position: absolute;
+  right: 25vw;
+  top: 40vh;
+  font-size: 20px;
+  color: #608CED;
+}

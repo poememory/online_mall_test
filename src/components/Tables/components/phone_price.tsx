@@ -20,7 +20,7 @@ const Phone_price_Table = () => {
       tooltip: {
         trigger: 'item'
       },
-      color: ['#8F8B8A', '#D0D2D4', '#504C4B', '#979BA3'],
+      color: ['#D5CBEB', '#EDEDED','#C2D5DE', '#DEDEDE'],
       series: [
         {
           name: '价格区间',
@@ -53,8 +53,8 @@ const Phone_price_Table = () => {
   }, []); // 空数组作为依赖，确保 useEffect 只执行一次
 
   return (
-    <div style={{width:'100vw',height:'60vw',position:'relative',backgroundImage:'url(/phone_background.png)',backgroundSize:'cover'}}>
-        <div id='phone_price_table' style={{ width: '600px', height: '600px',position:'absolute',top:'10vh',right:'10vw' }}></div>;
+    <div className='onshow' style={{width:'100vw',height:'98vh',position:'relative',backgroundImage:'url(/phone_background.jpg)',backgroundSize:'cover'}}>
+        <div id='phone_price_table' style={{ opacity:'0.8',width: '600px', height: '600px',position:'absolute',top:'5vh',left:'5vw' }}></div>;
     </div>
   )
   

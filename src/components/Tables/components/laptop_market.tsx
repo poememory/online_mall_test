@@ -11,16 +11,16 @@ const Laptop_market = () => {
 
     const option: EChartsOption = {
       title: {
-        text: '笔记本电脑市场比分布',
+        text: '笔记本电脑市场占比分布',
         left: 'center',
       },
       tooltip: {
         trigger: 'item'
       },
-      color: ['#49484D','#F0F1F3', '#6B6C70', '#504C4B', '#3A414E'],
+      color: ['#49484D','#F0F1F3', '#6B6C70', '#504C4B', '#ECDBF5'],
       series: [
         {
-          name: 'Nightingale Chart',
+          name: '市场分布',
           type: 'pie',
           radius: [50, 250],
           center: ['50%', '50%'],
@@ -50,8 +50,8 @@ const Laptop_market = () => {
   }, []); // 空数组作为依赖，确保 useEffect 只执行一次
 
   return (
-    <div style={{width:'100vw',height:'60vw',position:'relative',backgroundImage:'url(/laptop_market.jpg)',backgroundSize:'cover'}}>
-        <div id='laptop_market' style={{ width: '800px', height: '600px',position:'absolute',top:'10vh',left:'25vw' }}></div>;
+    <div className='onshow' style={{width:'100vw',height:'98vh',position:'relative',backgroundImage:'url(/laptop_market.jpg)',backgroundSize:'cover'}}>
+        <div id='laptop_market' style={{opacity:0.7 ,width: '800px', height: '600px',position:'absolute',top:'10vh',left:'55vw' }}></div>;
     </div>
   )
   

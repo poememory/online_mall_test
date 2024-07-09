@@ -15,6 +15,7 @@ import Footer from './components/Footer/Footer';
 import Tables from './components/Tables/Tables';
 import Product_detail from './components/Procudt_detail/Product_detail';
 import ProductKind from './components/productKind/productKind';
+import Cart from './components/Cart/Cart';
 
 function Root(){
   return(
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/product_detail/:P_ID",
         element: <Product_detail />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       }
     ]
   },

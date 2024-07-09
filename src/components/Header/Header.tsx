@@ -1,15 +1,14 @@
 import { Dropdown, Menu, Space } from 'antd';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import { DownOutlined} from '@ant-design/icons'
 
 
 function Header(){
-const nav=useNavigate()
 const token=localStorage.getItem('token')
 const products = {
     phone: '手机',
     laptop: '笔记本',
-    pingban: '平板电脑',
+    tablet: '平板电脑',
     camera: '相机',
     displayer: '显示器',
     earwears: '耳机',

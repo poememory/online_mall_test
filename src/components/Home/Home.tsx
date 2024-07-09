@@ -55,7 +55,7 @@ const Home = () => {
       };
       try {
         const response = await fetchApi(options);
-        let processedData:homeDetailKind[] = [];
+        const processedData:homeDetailKind[] = [];
         Object.keys(response).forEach((key) => {
             response[key].forEach((item) => {
               const { Name, Price, Image_URL, P_ID } = item;
