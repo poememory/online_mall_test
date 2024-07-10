@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify, make_response
+
+from cart import get_cart, cart_add, remove_from_cart
 from config import Config
 from auth import get_verification_code, register, login, token_required ,profile,update_profile
 from flask_cors import CORS
@@ -55,6 +57,24 @@ def product_detail_route():
 @app.route('/api/productKind', methods=['POST'])
 def productKind_route():
     return productKind(request.json)
+
+
+@app.route('/api/cart', methods=['GET'])
+@token_required
+def cart_route(current_user):
+    return get_cart(current_user)
+
+@app.route('/api/cart/add', methods=['POST'])
+@token_required
+def cart_add_route(current_user):
+    return cart_add(current_user,request.json)
+
+
+@app.route('/api/cart/remove', methods=['POST'])
+@token_required
+def cart_remove_route(current_user):
+    return remove_from_cart(current_user,request.json)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

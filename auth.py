@@ -69,7 +69,7 @@ def register(data):
             max_user_id = cursor.fetchone()[0]
             new_user_id = int(max_user_id) + 1 if max_user_id else 1
 
-            cursor.execute('INSERT INTO user_account (user_id, email, password) VALUES (%s, %s, %s)',
+            cursor.execute('INSERT INTO user_account (user_id, email, password,carts) VALUES (%s, %s, %s,[])',
                            (new_user_id, email, hashed_password))
             connection.commit()
 
