@@ -4,6 +4,8 @@ from cart import get_cart, cart_add, remove_from_cart
 from config import Config
 from auth import get_verification_code, register, login, token_required ,profile,update_profile
 from flask_cors import CORS
+
+from db import get_db_connection
 from product import homedetail, product_detail, productKind
 
 app = Flask(__name__)
@@ -75,6 +77,43 @@ def cart_add_route(current_user):
 def cart_remove_route(current_user):
     return remove_from_cart(current_user,request.json)
 
+@app.route('/api/search', methods=['GET'])
+def search():
+    query = request.args.get('query')
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    table_names =['phone', 'laptop','tablet','displayer','camera','earwears','keyboard','mouse']  # 需要依次搜索的表名列表
+    columns = ['Taobao_ID', 'Image_URL', 'Name', 'Price','P_ID']  # 指定的列名
+    all_results = []
+
+    for table_name in table_names:
+        columns_str = ', '.join(columns)
+        search_query = f"SELECT {columns_str} FROM {table_name} WHERE Name LIKE %s OR Name LIKE %s ORDER BY Taobao_ID"
+        params = ('%' + query + '%', '%' + query + '%')
+        cursor.execute(search_query, params)
+        results = cursor.fetchall()
+        all_results.extend(results)
+
+    # 检查并过滤重复的PID
+    pid_counts = {}
+    for row in all_results:
+        pid = row['P_ID']
+        if pid in pid_counts:
+            pid_counts[pid] += 1
+        else:
+            pid_counts[pid] = 1
+
+    filtered_results = []
+    seen_pids = set()
+    for row in all_results:
+        pid = row['P_ID']
+        if pid_counts[pid] > 1 and pid not in seen_pids:
+            seen_pids.add(pid)
+            filtered_results.append(row)
+
+    conn.close()
+    return jsonify(filtered_results)
 
 if __name__ == '__main__':
     app.run(debug=True)
