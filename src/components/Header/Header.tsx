@@ -1,9 +1,14 @@
-import { Dropdown, Menu, Space } from 'antd';
+import { Dropdown, Menu,} from 'antd';
 import { Link  } from 'react-router-dom';
 import { DownOutlined} from '@ant-design/icons'
+import { useState } from 'react';
+import { Space } from 'antd';
+import Search, { SearchProps } from 'antd/es/input/Search';
+import {useNavigate } from 'react-router-dom';
 
 
 function Header(){
+    const nav=useNavigate()
 const token=localStorage.getItem('token')
 const products = {
     phone: '手机',
@@ -25,6 +30,7 @@ const products = {
       </a>
     ),
   }))
+  const onSearch: SearchProps['onSearch'] = (value) => {nav(`/search/${value}`)}
     return(
         <Menu theme='dark' mode="horizontal" defaultSelectedKeys={['1']} 
             style={{width:'100vw',
@@ -52,6 +58,13 @@ const products = {
                 <Link to="/tables">
                     视图
                 </Link>
+            </Menu.Item>
+            <Menu.Item key="10086" style={{position:'absolute',left:'400px',backgroundColor:'transparent'}}>
+            <Search
+                style={{marginTop:"10px"}}
+                placeholder="搜你想要"
+                onSearch={onSearch}
+                />
             </Menu.Item>
             <div style={{position:'absolute',right:'120px',width:'150px'}}>
                 <Link to={token?'/profile':'/login'}>

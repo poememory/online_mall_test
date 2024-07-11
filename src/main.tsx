@@ -16,6 +16,7 @@ import Tables from './components/Tables/Tables';
 import Product_detail from './components/Procudt_detail/Product_detail';
 import ProductKind from './components/productKind/productKind';
 import Cart from './components/Cart/Cart';
+import Search from './components/Search/search';
 
 function Root(){
   return(
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/search/:key",
+        element: <Search />,
       }
     ]
   },
